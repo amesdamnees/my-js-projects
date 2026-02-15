@@ -1,4 +1,4 @@
-const GLOBAL_VERIBAL // когда переменная используеться для всего проэкта пишем капсом
+// const GLOBAL_VERIBAL - когда переменная используеться для всего проэкта пишем капсом
 console.log("Hello World!")
 // var - умеет всплывать (или hosting или подьем) при всплытии var инцилизируеться со значением undefined
 console.log(myTest) // там будет undefined
@@ -39,3 +39,53 @@ function constTest (){
 console.log(constTest()) 
 // myTest2 = "change text"
 console.log(myConstTest)
+
+
+
+
+x = 5;
+console.log(x); // выведет 5
+function myFunctionX() {
+	x = 10;
+	console.log(x, y);
+}
+function myFunctionY() {
+	var y = 10;
+	console.log(x, y);
+}
+myFunctionX(); // выведет что переменной x-10 а y-undefined
+{
+	x = 20;
+	var y = 30;	
+}
+console.log(x, y); // выведет что переменной x-20 а y-30
+myFunctionX(); // выведет что переменной x-10 а y-30
+var x = 30;
+y = 5
+console.log(x, y); // выведет ошибку что переменная x-30 а y-5
+myFunctionX();
+console.log(x) // x-10 y-5
+myFunctionY();// x-10 y-10
+console.log(x, y);// x-10 y-5
+
+
+
+const myName = "Anton"
+let myAge = 16
+const myHome= "Ukraine"
+let myCurrentAdress = "Spain"
+const secondsInMinute = 60
+const minuteInHour = 60
+const hoursInDay = 24
+const daysInYear = 365
+let myAgeInSeconds = secondsInMinute * minuteInHour * hoursInDay * daysInYear * myAge
+console.log(myAgeInSeconds)
+
+// const fruit = "apple";
+// fruit = "banana";
+// console.log( fruit );
+
+
+let postCode = 3456;
+postCode = 1367;
+console.log( postCode );
