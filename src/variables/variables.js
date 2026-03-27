@@ -4,7 +4,7 @@ console.log("Hello World!")
 console.log(myTest) // там будет undefined
 var myTest = "Hello"
 // console.log (myTest) - как глобальная область видимости влияет на window 
-var alert = "test"
+var const = "test"
 console.log(window)
 // alert("111")
 
