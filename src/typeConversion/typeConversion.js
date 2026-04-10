@@ -41,7 +41,7 @@ console.log(NaN === NaN)
 let test = 1 / 0;
 test = String( test ); // "0"
 console.log(test)
-test = Boolean ( test ); // false
+test = Boolean ( test ); // true
 console.log( test); // 0 
 console.log( true - 1 ); // 0
 console.log( 9 + false ); // 9
