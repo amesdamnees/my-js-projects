@@ -91,29 +91,78 @@ for (let i = 0; i < colour.length; i++) {
 // } else {
 //     console.log(' Favorite fruit is not defined! ')
 // }
-const ourNumber = 4;
-let isUserRight = false
-while (!isUserRight) {
-    const questionNumber = +prompt("Введите число", "от 1 до 10")
-    switch (questionNumber) {
-        case ourNumber:
-            alert("Вы угадали!");
-            isUserRight = true;
+let shouldContinue = false
+let num1 = null;
+let num2 = null;
+let operation = null
+let result;
+while (!shouldContinue) {
+    while (num1 === null) {
+        num1 = +prompt("ВВедіть перше число")
+        if (typeof (num1) !== "number" || Number.isNaN(num1)) {
+            alert("Ви ввели не число")
+            num1 = null
+        }
+    }
+    while (num2 === null) {
+        num2 = +prompt("ВВедіть друге число")
+        if (typeof (num2) !== "number" || Number.isNaN(num2)) {
+            alert("Ви ввели не число")
+            num2 = null
+        }
+    }
+    while (operation === null) {
+        operation = prompt("Яку операцію хочете провести (сума, віднімання, множення чи ділення)?")
+        if (operation === "Бувай") {
+            alert("Ссесія завершена")
+            shouldContinue = true;
             break;
-        case 3:
-        case 5:
-            alert("Очень горячо!")
+        }
+        if (
+            operation !== "сума" &&
+            operation !== "віднімання" &&
+            operation !== "множення" &&
+            operation !== "ділення"
+        ) {
+            alert("Неправильна команда,щоб закінчити введіь 'Бувай' ")
+
+            operation = null
+        }
+    }
+    if (!shouldContinue) {
+        break;
+    }
+    switch (operation) {
+        case "сума":
+            result = num1 + num2;
             break;
-        case 2:
-        case 6:
-            alert("Тепло")
+        case "віднімання":
+            result = num1 - num2;
             break;
-        default:
-            if (questionNumber > 10) {
-                alert("Введите число от 1 до 10")
-            } else {
-                alert("Холодно")
-            }
+        case "множення":
+            result = num1 * num2;
             break;
+        case "ділення":
+            result = num1 / num2;
+            break;
+        default: {
+            alert("Виникла помилка, спробуйте ще раз")
+            shouldContinue = false
+            break;
+        }
+    }
+    if (!shouldContinue) {
+        continue
+    }
+    alert(`Ваш результат ${result}`)
+    const questionConfirm = confirm("Хочете продовжити?")
+    if (!questionConfirm) {
+        alert("До побачення!")
+        shouldContinue = false
     }
 }
+
+// пофиксить код
+
+
+
