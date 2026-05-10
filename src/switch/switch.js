@@ -1,72 +1,72 @@
-let x = 1
-// switch (x) {
-//     case 5:
-//         console.log("Это число 5")
+// let x = 1
+// // switch (x) {
+// //     case 5:
+// //         console.log("Это число 5")
+// //         break;
+// //     case 6:
+// //         console.log("Это число 6")
+// //         break;
+// //     case 1:
+// //     case 2:
+// //         alert ("Это число 1 либо это 2")
+// //         break;
+// //     default:
+// //         console.log(`Я не знаю что это за число ${x}`)
+// //         break;
+// // }                                  
+
+// switch (true) {
+//     case (x > 5):
+//         console.log("Это число больше 5")
 //         break;
-//     case 6:
-//         console.log("Это число 6")
-//         break;
-//     case 1:
-//     case 2:
-//         alert ("Это число 1 либо это 2")
+//     case (x > 1 && x <= 3):
+//         console.log("Это число 2 либо 3")
 //         break;
 //     default:
-//         console.log(`Я не знаю что это за число ${x}`)
-//         break;
-// }                                  
-
-switch (true) {
-    case (x > 5):
-        console.log("Это число больше 5")
-        break;
-    case (x > 1 && x <= 3):
-        console.log("Это число 2 либо 3")
-        break;
-    default:
-        console.log(`Это число ${x}`)
-        break;
-}
-
-// let day = prompt('Введите день недели', 'понедельник');
-// if ( day === 'суббота' || day === 'воскресенье' ) {
-// console.log( 'Сегодня выходной' );
-// }
-// else {
-// console.log( 'Сегодня рабочий день' );
-// }
-
-// switch (day) {
-//     case "суббота":
-//     case "воскресенье":
-//         console.log('Сегодня выходной')
-//         break;
-
-//     default:
-//         console.log('Сегодня рабочий день')
+//         console.log(`Это число ${x}`)
 //         break;
 // }
-// Цвет Предмет
-// желтый солнце
-// красный помидор
-// зеленый трава
-// оранжевый апельсин
-// синий небо
-let colour = ["желтый", "красный", "зеленый", "оранжевый", "синий", "серый"]
-let objects = ["солнце", "помидор", "трава", "апельсин", "небо"]
-for (let i = 0; i < colour.length; i++) {
-    switch (colour[i]) {
-        case "желтый":
-        case "красный":
-        case "зеленый":
-        case "оранжевый":
-        case "синий":
-            console.log(objects[i])
-            break;
-        default:
-            console.log("Я не знаю что это за предмет")
-            break;
-    }
-}
+
+// // let day = prompt('Введите день недели', 'понедельник');
+// // if ( day === 'суббота' || day === 'воскресенье' ) {
+// // console.log( 'Сегодня выходной' );
+// // }
+// // else {
+// // console.log( 'Сегодня рабочий день' );
+// // }
+
+// // switch (day) {
+// //     case "суббота":
+// //     case "воскресенье":
+// //         console.log('Сегодня выходной')
+// //         break;
+
+// //     default:
+// //         console.log('Сегодня рабочий день')
+// //         break;
+// // }
+// // Цвет Предмет
+// // желтый солнце
+// // красный помидор
+// // зеленый трава
+// // оранжевый апельсин
+// // синий небо
+// let colour = ["желтый", "красный", "зеленый", "оранжевый", "синий", "серый"]
+// let objects = ["солнце", "помидор", "трава", "апельсин", "небо"]
+// for (let i = 0; i < colour.length; i++) {
+//     switch (colour[i]) {
+//         case "желтый":
+//         case "красный":
+//         case "зеленый":
+//         case "оранжевый":
+//         case "синий":
+//             console.log(objects[i])
+//             break;
+//         default:
+//             console.log("Я не знаю что это за предмет")
+//             break;
+//     }
+// }
 
 // switch (fruit) {
 // case 'apple':
@@ -129,7 +129,7 @@ while (!shouldContinue) {
             operation = null
         }
     }
-    if (!shouldContinue) {
+    if (shouldContinue) {
         break;
     }
     switch (operation) {
@@ -151,14 +151,12 @@ while (!shouldContinue) {
             break;
         }
     }
-    if (!shouldContinue) {
-        continue
-    }
+
     alert(`Ваш результат ${result}`)
     const questionConfirm = confirm("Хочете продовжити?")
     if (!questionConfirm) {
         alert("До побачення!")
-        shouldContinue = false
+        shouldContinue = true
     }
 }
 
