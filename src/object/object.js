@@ -96,3 +96,38 @@ function conditionOfCar(car) {
     return condition
 }
 console.log(conditionOfCar(myCar))
+
+// копирование обьектов
+let a = {
+    g: 1,
+    j: 8,
+    h: 4,
+    n: 2,
+    t:{
+        l:78
+    },
+    date:new Date(),
+    // sayHello: () => console.log("Hello")
+}
+let b = {}
+console.log(a)
+console.log(b)
+console.log(a == b)
+for (let g in a) {
+    b[g] = a[g]
+}
+console.log(b)
+let c = Object.assign({},b)
+c.t.l = "Hello"
+console.log(c)
+let j = {
+    ...c, // spread оператор
+   
+}
+console.log(j)
+let g = JSON.parse(JSON.stringify(j))
+g.t.l = "Hello World"
+console.log(g,c,a)
+let n = structuredClone(j)
+console.log(n)
+console.log(JSON.stringify(j))
