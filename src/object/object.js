@@ -131,3 +131,32 @@ console.log(g,c,a)
 let n = structuredClone(j)
 console.log(n)
 console.log(JSON.stringify(j))
+// сборщик мусора он следит за всеми обьектами в приложении и удаляет те которые
+// страли не достяжимемы я не достяжимемы считаються те обькты на которые нет ссылок
+// из корневых обьектов а это глобальные, локальные и некоторые другие значение
+// на пример если я из window немогу поочередно дойти до какого то обьекта то он удаляеться
+let user3 = {
+    name: "Ivan",
+    age: 32,
+    hobbies: {
+        sports: {
+            football: true,
+            volleyball: true,
+            swimming: false
+        },
+        arts: {
+            draw: true,
+            theater: true,
+            cinema: true
+     }
+}
+};
+let user4 = JSON.parse(JSON.stringify(user3));
+user3.hobbies.sports.football = false;
+console.log(user3.hobbies.sports.football);
+// true
+// false
+ user3 = { name: 'John', age: 23 };
+ user4 = user3;
+user4.name = 'Alex';
+console.log(user4)
